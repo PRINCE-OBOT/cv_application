@@ -1,6 +1,6 @@
 import '../styles/passport.css'
 import { useState } from "react";
-import passportPlaceholderImg from '../assets/passport_placeholder.svg'
+import passportPlaceholderImg from '../assets/imgs/passport_placeholder.svg'
 
 function setPassport(passportURL) {
   return passportURL ? (

@@ -61,8 +61,8 @@ h6 {
 @font-face {
   font-family: Roboto;
   src:
-    url(./fonts/Roboto-400.woff) format(woff),
-    url(./fonts/Pacifico-Regular.woff2) format(woff2);
+    url(../assets/fonts/Roboto-400.woff) format(woff),
+    url(../assets/fonts/Roboto-400.woff2) format(woff2);
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -71,8 +71,8 @@ h6 {
 @font-face {
   font-family: Pacifico;
   src:
-    url(./fonts/Pacifico-Regular.woff) format(woff),
-    url(./fonts/Pacifico-Regular.woff2) format(woff2);
+    url(../assets/fonts/Pacifico-Regular.woff) format(woff),
+    url(../assets/fonts/Pacifico-Regular.woff2) format(woff2);
   font-style: normal;
   font-weight: normal;
   font-display: swap;
@@ -114,5 +114,5 @@ body {
     var(--sz-sm) + 0.5vw,
     var(--sz-sm) + var(--sz-xsm)
   );
-  color: var(--white);
+  color: var(--black);
 }

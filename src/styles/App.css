@@ -4,12 +4,40 @@
 }
 
 .left_side {
-  width: clamp(240px, 40vw, 290px);
+  width: clamp(270px, 40vw, 290px);
   background: var(--sec-accent);
+}
+
+.left_side .bottom_wrapper {
+  padding: var(--sz-sm);
 }
 
 .right_side {
   flex: 1;
 }
 
+.icon {
+  width: 17px;
+  max-height: 17px;
+}
 
+input {
+  background: transparent;
+  border-width: 0 0 1px 0;
+  font-size: 14px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:read-only {
+    border-width: 0;
+  }
+}
+
+.modifyFieldWrapper {
+  display: flex;
+  column-gap: var(--sz-xsm);
+  opacity: 0;
+  transition: 200ms;
+}

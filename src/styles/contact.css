@@ -1,0 +1,28 @@
+section.contact {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--sz-sm);
+}
+
+.contact_item {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  column-gap: var(--sz-xsm);
+}
+
+.contact_item:hover .modifyFieldWrapper {
+  opacity: 1;
+}
+
+.unselect_contact_item_wrapper{
+  display: flex;
+  gap: var(--sz-sm);
+}
+
+.unselect_contact_item_btn{
+  background: var(--transparent-black-sm);
+  border: none;
+  box-shadow: var(--bx-shadow);
+  color: var(--sec-accent);
+  border-radius: var(--sz-xsm);
+}
