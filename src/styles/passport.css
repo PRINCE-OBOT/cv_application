@@ -1,0 +1,29 @@
+.passport_wrapper {
+  height: 258px;
+  background: var(--transparent-black-sm);
+  position: relative;
+}
+
+img.passport {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+input#passport {
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+}
+
+.passport_placeholder {
+  position: relative;
+}
+
+.upload_passport_text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-wrap: nowrap;
+}

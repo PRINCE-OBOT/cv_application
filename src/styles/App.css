@@ -1,0 +1,15 @@
+.cv_container {
+  min-height: 100vh;
+  display: flex;
+}
+
+.left_side {
+  width: clamp(240px, 40vw, 290px);
+  background: var(--sec-accent);
+}
+
+.right_side {
+  flex: 1;
+}
+
+

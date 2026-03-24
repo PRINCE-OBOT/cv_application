@@ -79,7 +79,7 @@ h6 {
 }
 
 :root {
-    --text: #6b6375;
+  --text: #6b6375;
   --text-h: #0f325d;
   --accent: rgb(5, 28, 239);
   --sec-accent: rgb(186, 222, 232);
@@ -109,6 +109,10 @@ h6 {
 
 body {
   font-family: Roboto, arial;
-  font-size: clamp(var(--sz-sm), var(--sz-sm) + 0.5vw, var(--sz-sm) + var(--sz-xsm));
+  font-size: clamp(
+    var(--sz-sm),
+    var(--sz-sm) + 0.5vw,
+    var(--sz-sm) + var(--sz-xsm)
+  );
   color: var(--white);
 }
