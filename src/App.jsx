@@ -3,6 +3,10 @@ import { Contact } from "./components/contact";
 import "./styles/App.css";
 import { useState } from "react";
 
+function Summary(){
+  
+}
+
 function App() {
   return (
     <div className="cv_container">

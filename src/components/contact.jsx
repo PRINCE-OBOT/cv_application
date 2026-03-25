@@ -1,9 +1,5 @@
 import "../styles/contact.css";
 
-import addressImg from "../assets/imgs/address.svg";
-import telImg from "../assets/imgs/tel.svg";
-import emailImg from "../assets/imgs/email.svg";
-
 import { ModifyField } from "./modifyField";
 import { setId } from "../utils";
 import { useState } from "react";
@@ -21,6 +17,7 @@ const contactList = [
     ),
     placeholder: "Address",
     alt: "Address",
+    value: "",
     isSelect: true,
     isEdit: false
   },
@@ -37,6 +34,7 @@ const contactList = [
     ),
     placeholder: "Tel",
     alt: "Telephone",
+    value: "",
     isSelect: true,
     isEdit: false
   },
@@ -52,6 +50,7 @@ const contactList = [
     ),
     placeholder: "Email",
     alt: "Email",
+    value: "",
     isSelect: true,
     isEdit: false
   }
@@ -64,13 +63,14 @@ const getItem = (e, contactItems) => {
   const id = getId(target);
 
   const newContactItems = [...contactItems];
-
   const index = getIndex(newContactItems, id);
+
   return { item: newContactItems[index], newContactItems };
 };
 
 export function Contact() {
   const [contactItems, setContactItem] = useState(contactList);
+  const [value, setValue] = useState("");
 
   function toggleEdit(e) {
     const { item, newContactItems } = getItem(e, contactItems);
@@ -100,13 +100,19 @@ export function Contact() {
     }
   });
 
+  function updateValue(e) {
+    const { item, newContactItems } = getItem(e, contactItems);
+    item.value = e.target.value;
+    setContactItem(newContactItems);
+  }
+
   return (
     <section className="contact">
       <div className="heading">
         <h2>Contact</h2>
       </div>
       <div className="unselect_contact_item_wrapper">
-        {unSelectedItem.map(({ placeholder, id }) => {
+        {unSelectedItem.map(({ id, placeholder, Icon }) => {
           return (
             <button
               key={id}
@@ -115,14 +121,15 @@ export function Contact() {
               className="unselect_contact_item_btn"
               data-item="contact"
             >
+              <Icon />
               {placeholder}
             </button>
           );
         })}
       </div>
 
-      <div className="select_contact_item">
-        {selectedItem.map(({ id, Icon, placeholder, alt, isEdit }) => {
+      <div className="select_contact_item_wrapper">
+        {selectedItem.map(({ id, Icon, placeholder, value, alt, isEdit }) => {
           return (
             <li key={id} id={id} className="contact_item" data-item="contact">
               <Icon />
@@ -131,6 +138,8 @@ export function Contact() {
                 placeholder={placeholder}
                 alt={alt}
                 readOnly={isEdit}
+                value={value}
+                onChange={updateValue}
                 className="field"
               />
               <ModifyField
