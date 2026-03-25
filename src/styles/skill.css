@@ -1,0 +1,25 @@
+.heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill_item_wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--sz-sm);
+  padding-top: var(--sz-sm);
+}
+
+.value_wrapper {
+  display: flex;
+  column-gap: var(--sz-xsm);
+  width: 70%;
+}
+
+input.value {
+  width: 70%;
+}
+
+p.value {
+  flex: 1;
+}

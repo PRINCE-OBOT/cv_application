@@ -1,7 +1,7 @@
 import "../styles/summary.css";
 import { useState } from "react";
 import { ModifyField } from "./modifyField";
-import { getItem, setId } from "../utils";
+import { closestItem, getItem, setId } from "../utils";
 
 const summaryList = [
   {
@@ -12,7 +12,7 @@ const summaryList = [
   }
 ].map(setId);
 
-export default function Summary() {
+export function Summary() {
   const [summaryItems, setSummaryItem] = useState(summaryList);
 
   function updateValue(e) {
@@ -22,8 +22,17 @@ export default function Summary() {
   }
 
   function toggleEdit(e) {
+    const closest = closestItem(e.target);
+    const textarea = closest.querySelector(".summary_description");
+
     const { item, newItems } = getItem(e, summaryItems);
-    item.isEdit = item.isEdit ? false : true;
+    const isEdit = item.isEdit;
+
+    if (isEdit) {
+      if (textarea.value.trim() === "") return;
+    }
+
+    item.isEdit = isEdit ? false : true;
     setSummaryItem(newItems);
   }
 
@@ -73,7 +82,12 @@ export default function Summary() {
       <div className="select_item_wrapper">
         {selectedItem.map(({ id, isEdit, placeholder, value }) => {
           return (
-            <li key={id} id={id} className="summary_item item" data-item="summary">
+            <li
+              key={id}
+              id={id}
+              className="summary_item item"
+              data-item="summary"
+            >
               {isEdit ? (
                 <textarea
                   name=""

@@ -2,8 +2,8 @@ import "./styles/App.css";
 import { useState } from "react";
 import { Passport } from "./components/passport";
 import { Contact } from "./components/contact";
-import Summary from "./components/summary";
-
+import { Summary } from "./components/summary";
+import { Skill } from "./components/skill";
 
 function App() {
   return (
@@ -12,7 +12,8 @@ function App() {
         <Passport />
         <div className="bottom_wrapper">
           <Contact />
-          <Summary/>
+          <Summary />
+          <Skill />
         </div>
       </aside>
       <section className="right_side">

@@ -47,6 +47,11 @@ input {
   display: flex;
   flex-direction: column;
   row-gap: var(--sz-xxlg);
+
+  & > section:nth-child(n + 2) {
+    padding-top: var(--sz-lg);
+    border-top: 2px solid var(--black);
+  }
 }
 
 .unselect_item_btn {
@@ -58,4 +63,11 @@ input {
   display: flex;
   align-items: center;
   column-gap: var(--sz-xsm);
+}
+
+.summary_item,
+.skill_item {
+  display: flex;
+  justify-content: space-between;
+  column-gap: var(--sz-sm);
 }
