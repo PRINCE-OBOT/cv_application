@@ -21,17 +21,18 @@
   max-height: 17px;
 }
 
+input,
+textarea,
+p {
+  font-size: 16px;
+}
+
 input {
   background: transparent;
   border-width: 0 0 1px 0;
-  font-size: 16px;
 
   &:focus {
     outline: none;
-  }
-
-  &:read-only {
-    border-width: 0;
   }
 }
 
@@ -42,9 +43,8 @@ input {
   transition: 200ms;
 }
 
-.bottom_wrapper{
+.bottom_wrapper {
   display: flex;
   flex-direction: column;
   row-gap: var(--sz-xxlg);
 }
-

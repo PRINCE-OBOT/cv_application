@@ -1,11 +1,9 @@
-import { Passport } from "./components/passport";
-import { Contact } from "./components/contact";
 import "./styles/App.css";
 import { useState } from "react";
+import { Passport } from "./components/passport";
+import { Contact } from "./components/contact";
+import Summary from "./components/summary";
 
-function Summary(){
-  
-}
 
 function App() {
   return (
@@ -14,6 +12,7 @@ function App() {
         <Passport />
         <div className="bottom_wrapper">
           <Contact />
+          <Summary/>
         </div>
       </aside>
       <section className="right_side">

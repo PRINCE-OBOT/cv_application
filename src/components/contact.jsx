@@ -1,7 +1,7 @@
 import "../styles/contact.css";
 
 import { ModifyField } from "./modifyField";
-import { setId } from "../utils";
+import { getItem, setId } from "../utils";
 import { useState } from "react";
 
 const contactList = [
@@ -19,7 +19,7 @@ const contactList = [
     alt: "Address",
     value: "",
     isSelect: true,
-    isEdit: false
+    isEdit: true
   },
 
   {
@@ -36,7 +36,7 @@ const contactList = [
     alt: "Telephone",
     value: "",
     isSelect: true,
-    isEdit: false
+    isEdit: true
   },
   {
     Icon: () => (
@@ -52,42 +52,29 @@ const contactList = [
     alt: "Email",
     value: "",
     isSelect: true,
-    isEdit: false
+    isEdit: true
   }
 ].map(setId);
 
-const getId = (target) => target.closest("[data-item='contact']").id;
-const getIndex = (arr, id) => arr.findIndex((item) => item.id === id);
-const getItem = (e, contactItems) => {
-  const target = e.target;
-  const id = getId(target);
-
-  const newContactItems = [...contactItems];
-  const index = getIndex(newContactItems, id);
-
-  return { item: newContactItems[index], newContactItems };
-};
-
 export function Contact() {
   const [contactItems, setContactItem] = useState(contactList);
-  const [value, setValue] = useState("");
 
   function toggleEdit(e) {
-    const { item, newContactItems } = getItem(e, contactItems);
+    const { item, newItems } = getItem(e, contactItems);
     item.isEdit = item.isEdit ? false : true;
-    setContactItem(newContactItems);
+    setContactItem(newItems);
   }
 
   function unselectItem(e) {
-    const { item, newContactItems } = getItem(e, contactItems);
+    const { item, newItems } = getItem(e, contactItems);
     item.isSelect = false;
-    setContactItem(newContactItems);
+    setContactItem(newItems);
   }
 
   function selectItem(e) {
-    const { item, newContactItems } = getItem(e, contactItems);
+    const { item, newItems } = getItem(e, contactItems);
     item.isSelect = true;
-    setContactItem(newContactItems);
+    setContactItem(newItems);
   }
 
   const selectedItem = [];
@@ -101,9 +88,9 @@ export function Contact() {
   });
 
   function updateValue(e) {
-    const { item, newContactItems } = getItem(e, contactItems);
+    const { item, newItems } = getItem(e, contactItems);
     item.value = e.target.value;
-    setContactItem(newContactItems);
+    setContactItem(newItems);
   }
 
   return (
@@ -131,17 +118,25 @@ export function Contact() {
       <div className="select_contact_item_wrapper">
         {selectedItem.map(({ id, Icon, placeholder, value, alt, isEdit }) => {
           return (
-            <li key={id} id={id} className="contact_item" data-item="contact">
+            <li
+              key={id}
+              id={id}
+              className="contact_item item"
+              data-item="contact"
+            >
               <Icon />
-              <input
-                type="text"
-                placeholder={placeholder}
-                alt={alt}
-                readOnly={isEdit}
-                value={value}
-                onChange={updateValue}
-                className="field"
-              />
+              {isEdit ? (
+                <input
+                  type="text"
+                  placeholder={placeholder}
+                  alt={alt}
+                  value={value}
+                  onChange={updateValue}
+                  className="field"
+                />
+              ) : (
+                <p>{value}</p>
+              )}
               <ModifyField
                 toggleEdit={toggleEdit}
                 unselectItem={unselectItem}

@@ -1,0 +1,29 @@
+.summary {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--sz-sm);
+  border-top: 2px solid var(--black);
+  padding-top: var(--sz-lg);
+}
+.summary_item {
+  display: flex;
+  justify-content: space-between;
+  column-gap: var(--sz-sm);
+}
+.summary_description {
+  flex: 1;
+  background: transparent;
+  resize: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+textarea.summary_description {
+  border: none;
+  border-bottom: 1px solid var(--black);
+}
