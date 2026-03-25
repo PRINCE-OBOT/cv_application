@@ -48,3 +48,14 @@ input {
   flex-direction: column;
   row-gap: var(--sz-xxlg);
 }
+
+.unselect_item_btn {
+  background: var(--transparent-black-sm);
+  border: none;
+  box-shadow: var(--bx-shadow);
+  color: var(--sec-accent);
+  border-radius: var(--sz-xsm);
+  display: flex;
+  align-items: center;
+  column-gap: var(--sz-xsm);
+}

@@ -2,6 +2,7 @@ section.contact {
   display: flex;
   flex-direction: column;
   row-gap: var(--sz-sm);
+  padding-top: var(--sz-sm);
 }
 
 .unselect_contact_item_wrapper {
@@ -9,16 +10,7 @@ section.contact {
   gap: var(--sz-sm);
 }
 
-.unselect_contact_item_btn {
-  background: var(--transparent-black-sm);
-  border: none;
-  box-shadow: var(--bx-shadow);
-  color: var(--sec-accent);
-  border-radius: var(--sz-xsm);
-  display: flex;
-  align-items: center;
-  column-gap: var(--sz-xsm);
-}
+
 
 .select_contact_item_wrapper {
   display: flex;

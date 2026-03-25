@@ -80,7 +80,7 @@ export function Contact() {
   const selectedItem = [];
   const unSelectedItem = [];
 
-  contactList.forEach((item) => {
+  contactItems.forEach((item) => {
     if (item.isSelect) selectedItem.push(item);
     else {
       unSelectedItem.push(item);
@@ -96,7 +96,7 @@ export function Contact() {
   return (
     <section className="contact">
       <div className="heading">
-        <h2>Contact</h2>
+        <h3>CONTACT</h3>
       </div>
       <div className="unselect_contact_item_wrapper">
         {unSelectedItem.map(({ id, placeholder, Icon }) => {
@@ -105,7 +105,7 @@ export function Contact() {
               key={id}
               id={id}
               onClick={selectItem}
-              className="unselect_contact_item_btn"
+              className="unselect_contact_item_btn unselect_item_btn"
               data-item="contact"
             >
               <Icon />
