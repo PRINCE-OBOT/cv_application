@@ -1,0 +1,22 @@
+section.name {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--sz-sm);
+  max-width: 350px;
+}
+
+.name_item {
+  list-style-type: none;
+  display: flex;
+
+  .icon {
+    min-width: 20px;
+  }
+}
+
+.full_name {
+  font-size: 30px;
+  font-weight: 900;
+  text-transform: capitalize;
+  flex: 1;
+}

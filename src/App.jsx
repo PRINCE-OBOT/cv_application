@@ -4,6 +4,7 @@ import { Passport } from "./components/passport";
 import { Contact } from "./components/contact";
 import { Summary } from "./components/summary";
 import { Skill } from "./components/skill";
+import { Name } from "./components/name";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         </div>
       </aside>
       <section className="right_side">
-        <header></header>
+        <Name />
         <main></main>
       </section>
     </div>
