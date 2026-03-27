@@ -1,0 +1,30 @@
+.education_item_wrapper {
+  padding-top: var(--sz-lg);
+  display: grid;
+  /* grid-template-columns: 1fr; */
+  row-gap: var(--sz-lg);
+}
+
+.education_item {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+}
+
+.education_item_left_side {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--sz-lg);
+  row-gap: var(--sz-lg);
+}
+
+[data-sub-item="education"] {
+  display: grid;
+  row-gap: var(--sz-xsm);
+}
+
+.education_name_and_location {
+  grid-column: 1/-1;
+}
+.year {
+  justify-self: right;
+}

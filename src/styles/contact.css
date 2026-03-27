@@ -24,6 +24,3 @@ section.contact {
   align-items: center;
 }
 
-.item:hover .modifyFieldWrapper {
-  opacity: 1;
-}

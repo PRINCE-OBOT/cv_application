@@ -3,8 +3,9 @@ export function setId(item) {
   return item;
 }
 
-export const closestItem = (target) => target.closest("[data-item]");
-export const getId = (target) => closestItem(target).id;
+export const closestItem = (target, attr = "[data-item]") =>
+  target.closest(attr);
+export const getId = (target, attr) => closestItem(target, attr).id;
 export const getIndex = (arr, id) => arr.findIndex((item) => item.id === id);
 
 export const getItem = (e, items) => {

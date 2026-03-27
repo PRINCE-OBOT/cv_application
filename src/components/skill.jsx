@@ -18,13 +18,13 @@ export function Skill() {
   }
 
   function toggleEdit(e) {
-    const closest = closestItem(e.target);
-    const inp = closest.querySelector("input.value");
-
     const { item, newItems } = getItem(e, skillItems);
     const isEdit = item.isEdit;
 
     if (isEdit) {
+      const closest = closestItem(e.target);
+      const inp = closest.querySelector("input.value");
+
       if (inp.value.trim() === "") return;
     }
 

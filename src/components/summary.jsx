@@ -22,13 +22,13 @@ export function Summary() {
   }
 
   function toggleEdit(e) {
-    const closest = closestItem(e.target);
-    const textarea = closest.querySelector(".summary_description");
-
     const { item, newItems } = getItem(e, summaryItems);
     const isEdit = item.isEdit;
 
     if (isEdit) {
+      const closest = closestItem(e.target);
+      const textarea = closest.querySelector(".summary_description");
+
       if (textarea.value.trim() === "") return;
     }
 

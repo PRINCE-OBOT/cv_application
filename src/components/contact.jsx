@@ -1,7 +1,7 @@
 import "../styles/contact.css";
 
 import { ModifyField } from "./modifyField";
-import { getItem, setId } from "../utils";
+import { closestItem, getItem, setId } from "../utils";
 import { useState } from "react";
 
 const contactList = [
@@ -61,7 +61,15 @@ export function Contact() {
 
   function toggleEdit(e) {
     const { item, newItems } = getItem(e, contactItems);
-    item.isEdit = item.isEdit ? false : true;
+    const isEdit = item.isEdit;
+
+    if (isEdit) {
+      const closest = closestItem(e.target);
+      const inp = closest.querySelector("input");
+
+      if (inp.value.trim() === "") return;
+    }
+    item.isEdit = isEdit ? false : true;
     setContactItem(newItems);
   }
 

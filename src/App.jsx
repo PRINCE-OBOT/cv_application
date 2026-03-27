@@ -5,6 +5,7 @@ import { Contact } from "./components/contact";
 import { Summary } from "./components/summary";
 import { Skill } from "./components/skill";
 import { Name } from "./components/name";
+import { Education } from "./components/education";
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
       </aside>
       <section className="right_side">
         <Name />
-        <main></main>
+        <main>
+          <Education/>
+        </main>
       </section>
     </div>
   );
