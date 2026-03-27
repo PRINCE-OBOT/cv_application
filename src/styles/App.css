@@ -23,7 +23,29 @@
   padding: var(--sz-xxlg) var(--sz-sm) var(--sz-sm) var(--sz-xlg);
 }
 
-.item:hover .modifyFieldWrapper {
+.modifyFieldWrapper {
+  display: flex;
+  column-gap: var(--sz-xsm);
+  transition: 200ms;
+  min-width: 20px;
+}
+
+.modify_field_btn {
+  opacity: 0;
+}
+
+.modify_field_btn, .add_item_btn {
+  background: transparent;
+  padding: 0;
+  border: none;
+  height: fit-content;
+}
+
+.item:hover .modify_field_btn {
+  opacity: 1;
+}
+
+.modify_field_btn:focus.modify_field_btn {
   opacity: 1;
 }
 
@@ -49,14 +71,6 @@ input {
 
 input {
   padding-left: 0;
-}
-
-.modifyFieldWrapper {
-  display: flex;
-  column-gap: var(--sz-xsm);
-  opacity: 0;
-  transition: 200ms;
-  min-width: 20px;
 }
 
 .bottom_wrapper {
@@ -98,7 +112,7 @@ main {
   position: relative;
 }
 
-.border_design_icon_wrapper{
+.border_design_icon_wrapper {
   background-color: var(--black);
   padding: var(--sz-xsm);
   width: fit-content;

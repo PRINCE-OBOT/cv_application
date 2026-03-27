@@ -51,30 +51,31 @@ export function Skill() {
     <section className="skill">
       <div className="heading">
         <h3>SKILLS</h3>
-        <svg
-          width="800px"
-          height="800px"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="icon"
-          onClick={addSkillItem}
-        >
-          <circle
-            opacity="0.5"
-            cx="12"
-            cy="12"
-            r="10"
-            stroke="#1C274C"
-            strokeWidth="1.5"
-          />
-          <path
-            d="M15 12L12 12M12 12L9 12M12 12L12 9M12 12L12 15"
-            stroke="#1C274C"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-        </svg>
+        <button onClick={addSkillItem} className="add_item_btn">
+          <svg
+            width="800px"
+            height="800px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="icon"
+          >
+            <circle
+              opacity="0.5"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="#1C274C"
+              strokeWidth="1.5"
+            />
+            <path
+              d="M15 12L12 12M12 12L9 12M12 12L12 9M12 12L12 15"
+              stroke="#1C274C"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            />
+          </svg>
+        </button>
       </div>
 
       <div className="skill_item_wrapper">

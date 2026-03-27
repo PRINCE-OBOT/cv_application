@@ -11,13 +11,17 @@ row-gap: var(--sz-lg);
 .education_item {
   display: grid;
   grid-template-columns: 1fr max-content;
+
+  label{
+    font-weight: 600;
+  }
 }
 
 .education_item_left_side {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: var(--sz-lg);
-  row-gap: var(--sz-lg);
+  row-gap: var(--sz-sm);
 }
 
 [data-sub-item="education"] {

@@ -96,30 +96,31 @@ export function Education() {
       </div>
       <div className="heading">
         <h3>EDUCATION</h3>
-        <svg
-          width="800px"
-          height="800px"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="icon"
-          onClick={addEducationItem}
-        >
-          <circle
-            opacity="0.5"
-            cx="12"
-            cy="12"
-            r="10"
-            stroke="#1C274C"
-            strokeWidth="1.5"
-          />
-          <path
-            d="M15 12L12 12M12 12L9 12M12 12L12 9M12 12L12 15"
-            stroke="#1C274C"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-        </svg>
+        <button onClick={addEducationItem} className="add_item_btn">
+          <svg
+            width="800px"
+            height="800px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="icon"
+          >
+            <circle
+              opacity="0.5"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="#1C274C"
+              strokeWidth="1.5"
+            />
+            <path
+              d="M15 12L12 12M12 12L9 12M12 12L12 9M12 12L12 15"
+              stroke="#1C274C"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            />
+          </svg>
+        </button>
       </div>
 
       <div className="education_item_wrapper item_wrapper">
@@ -131,9 +132,7 @@ export function Education() {
               data-item="education"
               className="education_item item"
             >
-              <div className="border_design_bullet">
-                &#9632;
-              </div>
+              <div className="border_design_bullet">&#9632;</div>
               <div className="education_item_left_side">
                 {isEdit
                   ? subItems.map(({ id, value, labelVal, className }) => {
