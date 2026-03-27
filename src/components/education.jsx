@@ -131,10 +131,10 @@ export function Education() {
                           data-sub-item="education"
                           className={className}
                         >
-                          <label htmlFor={id}>{labelVal}</label>
+                          <label htmlFor={id + "_"}>{labelVal}</label>
                           <input
                             type="text"
-                            id={id}
+                            id={id + "_"}
                             value={value}
                             placeholder={labelVal}
                             onChange={updateValue}
@@ -142,11 +142,21 @@ export function Education() {
                         </div>
                       );
                     })
-                  : subItems.map(({ id, value, className }) => (
-                      <p key={id} className={className}>
-                        {value}
-                      </p>
-                    ))}
+                  : subItems.map(({ id, value, labelVal, className }) => {
+                      return (
+                        <div
+                          key={id}
+                          id={id}
+                          data-sub-item="education"
+                          className={className}
+                        >
+                          <label>{labelVal}</label>
+                          <p key={id} className={className}>
+                            {value}
+                          </p>
+                        </div>
+                      );
+                    })}
               </div>
               <ModifyField
                 toggleEdit={toggleEdit}
