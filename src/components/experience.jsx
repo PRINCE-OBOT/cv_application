@@ -1,47 +1,47 @@
-import "../styles/education.css";
+import "../styles/experience.css";
 import { useState } from "react";
 import { closestItem, getId, getIndex, getItem } from "../utils";
 import { ModifyField } from "./modifyField";
 
-export function Education() {
-  const [educationItems, setEducationItems] = useState([]);
+export function Experience() {
+  const [experienceItems, setExperienceItems] = useState([]);
 
-  function addEducationItem() {
+  function addExperienceItem() {
     const item = {
       id: crypto.randomUUID(),
       isEdit: true,
       isSelect: true,
       subItems: [
         {
-          id: "education_&_location",
-          className: "education_name_and_location",
-          labelVal: "Education & Location",
+          id: "organization",
+          className: "organization",
+          labelVal: "Organization",
           value: ""
         },
         {
-          id: "certificate",
-          className: "certificate",
-          labelVal: "Certificate",
+          id: "position",
+          className: "position",
+          labelVal: "Position",
           value: ""
         },
         {
-          id: "year",
-          className: "year",
-          labelVal: "Year",
+          id: "start_end_year",
+          className: "start_end_year",
+          labelVal: "Start - End Year",
           value: ""
         }
       ]
     };
 
-    const newItems = [...educationItems, item];
-    setEducationItems(newItems);
+    const newItems = [...experienceItems, item];
+    setExperienceItems(newItems);
   }
 
   function updateValue(e) {
     const target = e.target;
     const itemId = getId(target);
 
-    const newItems = [...educationItems];
+    const newItems = [...experienceItems];
 
     const subItemId = getId(target, "[data-sub-item]");
     const itemIndex = getIndex(newItems, itemId);
@@ -52,11 +52,11 @@ export function Education() {
     const newSubItem = newSubItems[subItemIndex];
 
     newSubItem.value = target.value;
-    setEducationItems(newItems);
+    setExperienceItems(newItems);
   }
 
   function toggleEdit(e) {
-    const { item, newItems } = getItem(e, educationItems);
+    const { item, newItems } = getItem(e, experienceItems);
     const isEdit = item.isEdit;
 
     if (isEdit) {
@@ -70,33 +70,33 @@ export function Education() {
 
     item.isEdit = isEdit ? false : true;
 
-    setEducationItems(newItems);
+    setExperienceItems(newItems);
   }
 
   function unselectItem(e) {
     const id = getId(e.target);
-    const newItems = [...educationItems];
+    const newItems = [...experienceItems];
 
     const index = getIndex(newItems, id);
     newItems.splice(index, 1);
-    setEducationItems(newItems);
+    setExperienceItems(newItems);
   }
 
   return (
-    <section className="education">
+    <section className="experience">
       <div className="border_design_icon_wrapper">
         <svg
-          className="border_design_icon"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
+          className="border_design_icon"
           fill="#fff"
         >
-          <path d="M13,3V9H21V3M13,21H21V11H13M3,21H11V15H3M3,13H11V3H3V13Z" />
+          <path d="M18.72,14.76C19.07,13.91 19.26,13 19.26,12C19.26,11.28 19.15,10.59 18.96,9.95C18.31,10.1 17.63,10.18 16.92,10.18C13.86,10.18 11.15,8.67 9.5,6.34C8.61,8.5 6.91,10.26 4.77,11.22C4.73,11.47 4.73,11.74 4.73,12A7.27,7.27 0 0,0 12,19.27C13.05,19.27 14.06,19.04 14.97,18.63C15.54,19.72 15.8,20.26 15.78,20.26C14.14,20.81 12.87,21.08 12,21.08C9.58,21.08 7.27,20.13 5.57,18.42C4.53,17.38 3.76,16.11 3.33,14.73H2V10.18H3.09C3.93,6.04 7.6,2.92 12,2.92C14.4,2.92 16.71,3.87 18.42,5.58C19.69,6.84 20.54,8.45 20.89,10.18H22V14.67H22V14.69L22,14.73H21.94L18.38,18L13.08,17.4V15.73H17.91L18.72,14.76M9.27,11.77C9.57,11.77 9.86,11.89 10.07,12.11C10.28,12.32 10.4,12.61 10.4,12.91C10.4,13.21 10.28,13.5 10.07,13.71C9.86,13.92 9.57,14.04 9.27,14.04C8.64,14.04 8.13,13.54 8.13,12.91C8.13,12.28 8.64,11.77 9.27,11.77M14.72,11.77C15.35,11.77 15.85,12.28 15.85,12.91C15.85,13.54 15.35,14.04 14.72,14.04C14.09,14.04 13.58,13.54 13.58,12.91A1.14,1.14 0 0,1 14.72,11.77Z" />
         </svg>
       </div>
       <div className="heading">
-        <h3>EDUCATION</h3>
-        <button onClick={addEducationItem} className="add_item_btn">
+        <h3>WORK EXPERIENCE</h3>
+        <button onClick={addExperienceItem} className="add_item_btn">
           <svg
             width="800px"
             height="800px"
@@ -123,8 +123,8 @@ export function Education() {
         </button>
       </div>
 
-      <div className="education_item_wrapper item_wrapper">
-        {educationItems.map(({ id, subItems, isEdit }) => {
+      <div className="item_wrapper">
+        {experienceItems.map(({ id, subItems, isEdit }) => {
           return (
             <li
               key={id}
@@ -140,7 +140,7 @@ export function Education() {
                         <div
                           key={id}
                           id={id}
-                          data-sub-item="education"
+                          data-sub-item
                           className={className}
                         >
                           <label htmlFor={id + "_"}>{labelVal}</label>
@@ -159,7 +159,7 @@ export function Education() {
                         <div
                           key={id}
                           id={id}
-                          data-sub-item="education"
+                          data-sub-item
                           className={className}
                         >
                           <label>{labelVal}</label>
