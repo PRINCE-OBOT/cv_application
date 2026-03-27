@@ -123,6 +123,7 @@ main {
 
     label {
       font-weight: 600;
+      color: rgb(64, 72, 98);
     }
   }
 
@@ -142,6 +143,20 @@ main {
 .education_name_and_location,
 .organization {
   grid-column: 1/-1;
+}
+
+.year,
+.start_end_year {
+  justify-self: right;
+  text-align: left;
+}
+
+.skill_item_wrapper,
+.hobbies_item_wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--sz-sm);
+  padding-top: var(--sz-sm);
 }
 
 .border_design_icon_wrapper {

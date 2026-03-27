@@ -3,12 +3,7 @@
   justify-content: space-between;
 }
 
-.skill_item_wrapper {
-  display: flex;
-  flex-direction: column;
-  row-gap: var(--sz-sm);
-  padding-top: var(--sz-sm);
-}
+
 
 .value_wrapper {
   display: flex;
