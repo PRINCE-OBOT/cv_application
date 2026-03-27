@@ -1,7 +1,10 @@
+section.education{
+    display: flex;
+flex-direction: column;
+row-gap: var(--sz-lg);
+}
 .education_item_wrapper {
-  padding-top: var(--sz-lg);
   display: grid;
-  /* grid-template-columns: 1fr; */
   row-gap: var(--sz-lg);
 }
 
@@ -27,4 +30,6 @@
 }
 .year {
   justify-self: right;
+  text-align: left;
 }
+

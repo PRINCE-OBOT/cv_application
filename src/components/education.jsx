@@ -84,6 +84,16 @@ export function Education() {
 
   return (
     <section className="education">
+      <div className="border_design_icon_wrapper">
+        <svg
+          className="border_design_icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="#fff"
+        >
+          <path d="M13,3V9H21V3M13,21H21V11H13M3,21H11V15H3M3,13H11V3H3V13Z" />
+        </svg>
+      </div>
       <div className="heading">
         <h3>EDUCATION</h3>
         <svg
@@ -112,7 +122,7 @@ export function Education() {
         </svg>
       </div>
 
-      <div className="education_item_wrapper">
+      <div className="education_item_wrapper item_wrapper">
         {educationItems.map(({ id, subItems, isEdit }) => {
           return (
             <li
@@ -121,6 +131,9 @@ export function Education() {
               data-item="education"
               className="education_item item"
             >
+              <div className="border_design_bullet">
+                &#9632;
+              </div>
               <div className="education_item_left_side">
                 {isEdit
                   ? subItems.map(({ id, value, labelVal, className }) => {
