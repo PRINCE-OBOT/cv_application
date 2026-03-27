@@ -1,4 +1,3 @@
-import "../styles/education.css";
 import { useState } from "react";
 import { closestItem, getId, getIndex, getItem } from "../utils";
 import { ModifyField } from "./modifyField";

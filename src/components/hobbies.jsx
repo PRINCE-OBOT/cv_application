@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../styles/hobbies.css";
 import { ModifyField } from "./modifyField";
 import { closestItem, getId, getIndex, getItem } from "../utils";
 

@@ -8,6 +8,7 @@ import { Name } from "./components/name";
 import { Education } from "./components/education";
 import { Experience } from "./components/experience";
 import { Hobbies } from "./components/hobbies";
+import { Referees } from "./components/referees";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Education />
           <Experience />
           <Hobbies />
+          <Referees />
         </main>
       </section>
     </div>
