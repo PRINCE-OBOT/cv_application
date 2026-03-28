@@ -17,7 +17,7 @@ const contactList = [
     ),
     placeholder: "Address",
     alt: "Address",
-    value: "",
+    value: "Iyala Bridge, Nigeria",
     isSelect: true,
     isEdit: true
   },
@@ -34,7 +34,7 @@ const contactList = [
     ),
     placeholder: "Tel",
     alt: "Telephone",
-    value: "",
+    value: "08145231098",
     isSelect: true,
     isEdit: true
   },
@@ -50,7 +50,7 @@ const contactList = [
     ),
     placeholder: "Email",
     alt: "Email",
-    value: "",
+    value: "princessamuel45@gmail.com",
     isSelect: true,
     isEdit: true
   }

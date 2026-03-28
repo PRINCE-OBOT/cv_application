@@ -2,8 +2,29 @@ import { useState } from "react";
 import { ModifyField } from "./modifyField";
 import { closestItem, getId, getIndex, getItem, previewBus } from "../utils";
 
+const hobbiesList = [
+  {
+    id: crypto.randomUUID(),
+    value: "Reading",
+    isSelect: true,
+    isEdit: true
+  },
+  {
+    id: crypto.randomUUID(),
+    value: "Cooking",
+    isSelect: true,
+    isEdit: true
+  },
+  {
+    id: crypto.randomUUID(),
+    value: "Workout",
+    isSelect: true,
+    isEdit: true
+  },
+];
+
 export function Hobbies() {
-  const [hobbiesItems, setHobbiesItem] = useState([]);
+  const [hobbiesItems, setHobbiesItem] = useState(hobbiesList);
 
   function addSkillItem() {
     const item = {

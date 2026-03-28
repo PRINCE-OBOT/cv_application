@@ -4,7 +4,7 @@ import { closestItem, getItem, previewBus, setId } from "../utils";
 
 const nameList = [
   {
-    value: "",
+    value: "Prince Obot",
     isEdit: true,
     placeholder: "Full Name"
   }

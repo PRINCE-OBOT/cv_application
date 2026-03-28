@@ -2,8 +2,61 @@ import { useState } from "react";
 import { closestItem, getId, getIndex, getItem, previewBus } from "../utils";
 import { ModifyField } from "./modifyField";
 
+const educationList = [
+  {
+    id: crypto.randomUUID(),
+    isEdit: true,
+    isSelect: true,
+    subItems: [
+      {
+        id: "education_&_location",
+        className: "education_name_and_location",
+        labelVal: "Education & Location",
+        value: "University of Cam, United State"
+      },
+      {
+        id: "certificate",
+        className: "certificate",
+        labelVal: "Certificate",
+        value: "Bachelor"
+      },
+      {
+        id: "year",
+        className: "year",
+        labelVal: "Year",
+        value: "2023"
+      }
+    ]
+  },
+  {
+    id: crypto.randomUUID(),
+    isEdit: true,
+    isSelect: true,
+    subItems: [
+      {
+        id: "education_&_location",
+        className: "education_name_and_location",
+        labelVal: "Education & Location",
+        value: "Golden Peach, Nigeria"
+      },
+      {
+        id: "certificate",
+        className: "certificate",
+        labelVal: "Certificate",
+        value: "West African Examination Council"
+      },
+      {
+        id: "year",
+        className: "year",
+        labelVal: "Year",
+        value: "2020"
+      }
+    ]
+  },
+];
+
 export function Education() {
-  const [educationItems, setEducationItems] = useState([]);
+  const [educationItems, setEducationItems] = useState(educationList);
 
   function addEducationItem() {
     const item = {

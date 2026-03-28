@@ -3,8 +3,35 @@ import "../styles/skill.css";
 import { ModifyField } from "./modifyField";
 import { closestItem, getId, getIndex, getItem, previewBus } from "../utils";
 
+const skillList = [
+  {
+    id: crypto.randomUUID(),
+    value: "Work with team",
+    isSelect: true,
+    isEdit: true
+  },
+  {
+    id: crypto.randomUUID(),
+    value: "Communication",
+    isSelect: true,
+    isEdit: true
+  },
+  {
+    id: crypto.randomUUID(),
+    value: "Fast learning",
+    isSelect: true,
+    isEdit: true
+  },
+  {
+    id: crypto.randomUUID(),
+    value: "Hard work",
+    isSelect: true,
+    isEdit: true
+  },
+];
+
 export function Skill() {
-  const [skillItems, setSkillItem] = useState([]);
+  const [skillItems, setSkillItem] = useState(skillList);
 
   function addSkillItem() {
     const item = {

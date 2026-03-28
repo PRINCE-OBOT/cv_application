@@ -45,14 +45,15 @@ header {
 }
 
 .modify_field_btn,
-.add_item_btn, .preview_icon_btn {
+.add_item_btn,
+.preview_icon_btn {
   background: transparent;
   padding: 0;
   border: none;
   height: fit-content;
 }
 
-.preview_icon_btn{
+.preview_icon_btn {
   display: flex;
   column-gap: var(--sz-xsm);
   align-items: center;
@@ -200,6 +201,10 @@ section.experience {
   row-gap: var(--sz-lg);
 }
 
-.hide{
+main section:last-child .item_wrapper:empty {
+  display: none;
+}
+
+.hide {
   display: none !important;
 }

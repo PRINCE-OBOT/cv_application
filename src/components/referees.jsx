@@ -2,8 +2,49 @@ import { useState } from "react";
 import { closestItem, getId, getIndex, getItem, previewBus } from "../utils";
 import { ModifyField } from "./modifyField";
 
+const refereesList = [
+  {
+    id: crypto.randomUUID(),
+    isEdit: true,
+    isSelect: true,
+    subItems: [
+      {
+        id: "name",
+        className: "name",
+        labelVal: "Name",
+        value: "Abdul"
+      },
+      {
+        id: "tel",
+        className: "tel",
+        labelVal: "Tel",
+        value: "08012356789"
+      }
+    ]
+  },
+  {
+    id: crypto.randomUUID(),
+    isEdit: true,
+    isSelect: true,
+    subItems: [
+      {
+        id: "name",
+        className: "name",
+        labelVal: "Name",
+        value: "Sani"
+      },
+      {
+        id: "tel",
+        className: "tel",
+        labelVal: "Tel",
+        value: "09083768930"
+      }
+    ]
+  }
+];
+
 export function Referees() {
-  const [refereesItems, setRefereesItems] = useState([]);
+  const [refereesItems, setRefereesItems] = useState(refereesList);
 
   function addRefereeItem() {
     const item = {

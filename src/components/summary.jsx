@@ -5,7 +5,7 @@ import { closestItem, getItem, previewBus, setId } from "../utils";
 
 const summaryList = [
   {
-    value: "",
+    value: "To work in a peaceful and conducive environment so as to enable me show case and execute the potential and professional skills in me, as well as promoting and achieving organizational goals where I find myself as an employee.",
     isEdit: true,
     isSelect: true,
     placeholder: "Summary"

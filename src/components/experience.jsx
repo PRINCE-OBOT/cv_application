@@ -2,8 +2,61 @@ import { useState } from "react";
 import { closestItem, getId, getIndex, getItem, previewBus } from "../utils";
 import { ModifyField } from "./modifyField";
 
+const experienceList = [
+  {
+    id: crypto.randomUUID(),
+    isEdit: true,
+    isSelect: true,
+    subItems: [
+      {
+        id: "organization",
+        className: "organization",
+        labelVal: "Organization",
+        value: "NIIT"
+      },
+      {
+        id: "position",
+        className: "position",
+        labelVal: "Position",
+        value: "CEO"
+      },
+      {
+        id: "start_end_year",
+        className: "start_end_year",
+        labelVal: "Start - End Year",
+        value: "2026 - Current"
+      }
+    ]
+  },
+  {
+    id: crypto.randomUUID(),
+    isEdit: true,
+    isSelect: true,
+    subItems: [
+      {
+        id: "organization",
+        className: "organization",
+        labelVal: "Organization",
+        value: "Shell"
+      },
+      {
+        id: "position",
+        className: "position",
+        labelVal: "Position",
+        value: "Secretary"
+      },
+      {
+        id: "start_end_year",
+        className: "start_end_year",
+        labelVal: "Start - End Year",
+        value: "2024 - 2025"
+      }
+    ]
+  }
+];
+
 export function Experience() {
-  const [experienceItems, setExperienceItems] = useState([]);
+  const [experienceItems, setExperienceItems] = useState(experienceList);
 
   function addExperienceItem() {
     const item = {
@@ -81,9 +134,9 @@ export function Experience() {
     setExperienceItems(newItems);
   }
 
-    previewBus.addEventListener("preview", (e) => {
-      e.detail.previewFormat(experienceItems, setExperienceItems);
-    });
+  previewBus.addEventListener("preview", (e) => {
+    e.detail.previewFormat(experienceItems, setExperienceItems);
+  });
 
   return (
     <section className="experience">
