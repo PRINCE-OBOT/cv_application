@@ -13,7 +13,6 @@ import { Preview } from "./components/preview";
 function navLeftSideBar(method) {
   const leftSide = document.querySelector(".left_side");
   leftSide.classList[method]("show");
-  
 }
 
 function App() {
