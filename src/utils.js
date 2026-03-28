@@ -18,7 +18,7 @@ export const getItem = (e, items) => {
   return { item: newItems[index], newItems };
 };
 
-export const isSomeItemEmpty = (value) => value.some((item) => item.value === "");
+export const isSomeItemEmpty = (value) => value.some((item) => item.value.trim() === "");
 
 export const hideEmptyElem = (isPreview, elem) => {
   !isPreview
