@@ -10,12 +10,28 @@ import { Hobbies } from "./components/hobbies";
 import { Referees } from "./components/referees";
 import { Preview } from "./components/preview";
 
-const body = document.body;
+function navLeftSideBar(method) {
+  const leftSide = document.querySelector(".left_side");
+  leftSide.classList[method]("show");
+  
+}
 
 function App() {
   return (
     <div className="cv_container">
+      <button
+        className="open_side_bar_btn"
+        onClick={() => navLeftSideBar("add")}
+      >
+        Profile
+      </button>
       <aside className="left_side">
+        <button
+          className="close_side_bar_btn"
+          onClick={() => navLeftSideBar("remove")}
+        >
+          X
+        </button>
         <Passport />
         <div className="bottom_wrapper">
           <Contact />
