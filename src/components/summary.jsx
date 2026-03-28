@@ -1,7 +1,7 @@
 import "../styles/summary.css";
 import { useState } from "react";
 import { ModifyField } from "./modifyField";
-import { closestItem, getItem, setId } from "../utils";
+import { closestItem, getItem, previewBus, setId } from "../utils";
 
 const summaryList = [
   {
@@ -58,11 +58,15 @@ export function Summary() {
     }
   });
 
+  previewBus.addEventListener("preview", (e) => {
+    e.detail.previewFormat(summaryItems, setSummaryItem);
+  });
+
   return (
     <section className="summary">
       <h3>SUMMARY</h3>
 
-      <div className="unselect_summary_item_wrapper">
+      <div className="unselect_summary_item_wrapper unselect_item_wrapper">
         {unSelectedItem.map(({ id, placeholder }) => {
           return (
             <button

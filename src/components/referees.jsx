@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { closestItem, getId, getIndex, getItem } from "../utils";
+import { closestItem, getId, getIndex, getItem, previewBus } from "../utils";
 import { ModifyField } from "./modifyField";
 
 export function Referees() {
@@ -75,6 +75,10 @@ export function Referees() {
     setRefereesItems(newItems);
   }
 
+  previewBus.addEventListener("preview", (e) => {
+    e.detail.previewFormat(refereesItems, setRefereesItems);
+  });
+
   return (
     <section className="experience">
       <div className="border_design_icon_wrapper">
@@ -117,54 +121,56 @@ export function Referees() {
       </div>
 
       <div className="item_wrapper">
-        {refereesItems.map(({ id, subItems, isEdit }) => {
-          return (
-            <li key={id} id={id} data-item className="item">
-              <div className="border_design_bullet">&#9632;</div>
-              <div className="item_left_side">
-                {isEdit
-                  ? subItems.map(({ id, value, labelVal, className }) => {
-                      return (
-                        <div
-                          key={id}
-                          id={id}
-                          data-sub-item
-                          className={className}
-                        >
-                          <label htmlFor={id + "_"}>{labelVal}</label>
-                          <input
-                            type="text"
-                            id={id + "_"}
-                            value={value}
-                            placeholder={labelVal}
-                            onChange={updateValue}
-                          />
-                        </div>
-                      );
-                    })
-                  : subItems.map(({ id, value, labelVal, className }) => {
-                      return (
-                        <div
-                          key={id}
-                          id={id}
-                          data-sub-item
-                          className={className}
-                        >
-                          <label>{labelVal}</label>
-                          <p key={id} className={className}>
-                            {value}
-                          </p>
-                        </div>
-                      );
-                    })}
-              </div>
-              <ModifyField
-                toggleEdit={toggleEdit}
-                unselectItem={unselectItem}
-              />
-            </li>
-          );
-        })}
+        {refereesItems
+          .filter(({ isSelect }) => isSelect)
+          .map(({ id, subItems, isEdit }) => {
+            return (
+              <li key={id} id={id} data-item className="item">
+                <div className="border_design_bullet">&#9632;</div>
+                <div className="item_left_side">
+                  {isEdit
+                    ? subItems.map(({ id, value, labelVal, className }) => {
+                        return (
+                          <div
+                            key={id}
+                            id={id}
+                            data-sub-item
+                            className={className}
+                          >
+                            <label htmlFor={id + "_"}>{labelVal}</label>
+                            <input
+                              type="text"
+                              id={id + "_"}
+                              value={value}
+                              placeholder={labelVal}
+                              onChange={updateValue}
+                            />
+                          </div>
+                        );
+                      })
+                    : subItems.map(({ id, value, labelVal, className }) => {
+                        return (
+                          <div
+                            key={id}
+                            id={id}
+                            data-sub-item
+                            className={className}
+                          >
+                            <label>{labelVal}</label>
+                            <p key={id} className={className}>
+                              {value}
+                            </p>
+                          </div>
+                        );
+                      })}
+                </div>
+                <ModifyField
+                  toggleEdit={toggleEdit}
+                  unselectItem={unselectItem}
+                />
+              </li>
+            );
+          })}
       </div>
     </section>
   );

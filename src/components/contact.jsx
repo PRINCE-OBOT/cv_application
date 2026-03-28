@@ -1,7 +1,7 @@
 import "../styles/contact.css";
 
 import { ModifyField } from "./modifyField";
-import { closestItem, getItem, setId } from "../utils";
+import { closestItem, getItem, previewBus, setId } from "../utils";
 import { useState } from "react";
 
 const contactList = [
@@ -101,12 +101,16 @@ export function Contact() {
     setContactItem(newItems);
   }
 
+  previewBus.addEventListener("preview", (e) => {
+    e.detail.previewFormat(contactItems, setContactItem);
+  });
+
   return (
     <section className="contact">
       <div className="heading">
         <h3>CONTACT</h3>
       </div>
-      <div className="unselect_contact_item_wrapper">
+      <div className="unselect_contact_item_wrapper unselect_item_wrapper">
         {unSelectedItem.map(({ id, placeholder, Icon }) => {
           return (
             <button

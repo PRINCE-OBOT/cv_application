@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ModifyField } from "./modifyField";
-import { closestItem, getId, getIndex, getItem } from "../utils";
+import { closestItem, getId, getIndex, getItem, previewBus } from "../utils";
 
 export function Hobbies() {
   const [hobbiesItems, setHobbiesItem] = useState([]);
@@ -9,6 +9,7 @@ export function Hobbies() {
     const item = {
       id: crypto.randomUUID(),
       value: "",
+      isSelect: true,
       isEdit: true
     };
 
@@ -45,6 +46,10 @@ export function Hobbies() {
     item.value = e.target.value;
     setHobbiesItem(newItems);
   }
+
+  previewBus.addEventListener("preview", (e) => {
+    e.detail.previewFormat(hobbiesItems, setHobbiesItem);
+  });
 
   return (
     <section className="hobbies">
@@ -88,36 +93,38 @@ export function Hobbies() {
       </div>
 
       <div className="hobbies_item_wrapper">
-        {hobbiesItems.map(({ id, value, isEdit }, index) => {
-          return (
-            <li
-              key={id}
-              id={id}
-              className="item"
-              data-item
-              data-edit={isEdit}
-            >
-              {isEdit ? (
-                <input
-                  id={"hobbies_" + id}
-                  type="text"
-                  value={value}
-                  onChange={updateValue}
-                  className="value"
+        {hobbiesItems
+          .filter(({ isSelect }) => isSelect)
+          .map(({ id, value, isEdit }) => {
+            return (
+              <li
+                key={id}
+                id={id}
+                className="item"
+                data-item
+                data-edit={isEdit}
+              >
+                {isEdit ? (
+                  <input
+                    id={"hobbies_" + id}
+                    type="text"
+                    value={value}
+                    onChange={updateValue}
+                    className="value"
+                  />
+                ) : (
+                  <div className="value_wrapper">
+                    <p>&bull;</p>
+                    <p className="value">{value}</p>
+                  </div>
+                )}
+                <ModifyField
+                  toggleEdit={toggleEdit}
+                  unselectItem={unselectItem}
                 />
-              ) : (
-                <div className="value_wrapper">
-                  <p>&bull;</p>
-                  <p className="value">{value}</p>
-                </div>
-              )}
-              <ModifyField
-                toggleEdit={toggleEdit}
-                unselectItem={unselectItem}
-              />
-            </li>
-          );
-        })}
+              </li>
+            );
+          })}
       </div>
     </section>
   );

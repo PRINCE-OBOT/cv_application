@@ -23,6 +23,16 @@
   padding: var(--sz-xxlg) var(--sz-sm) var(--sz-sm) var(--sz-xlg);
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.preview_icon {
+  width: 20px;
+  height: 20px;
+}
+
 .modifyFieldWrapper {
   display: flex;
   column-gap: var(--sz-xsm);
@@ -35,11 +45,17 @@
 }
 
 .modify_field_btn,
-.add_item_btn {
+.add_item_btn, .preview_icon_btn {
   background: transparent;
   padding: 0;
   border: none;
   height: fit-content;
+}
+
+.preview_icon_btn{
+  display: flex;
+  column-gap: var(--sz-xsm);
+  align-items: center;
 }
 
 .item:hover .modify_field_btn {
@@ -182,4 +198,8 @@ section.experience {
   display: flex;
   flex-direction: column;
   row-gap: var(--sz-lg);
+}
+
+.hide{
+  display: none !important;
 }

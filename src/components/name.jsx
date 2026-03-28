@@ -1,6 +1,6 @@
 import "../styles/name.css";
 import { useState } from "react";
-import { closestItem, getItem, setId } from "../utils";
+import { closestItem, getItem, previewBus, setId } from "../utils";
 
 const nameList = [
   {
@@ -33,6 +33,10 @@ export function Name() {
     item.isEdit = isEdit ? false : true;
     setNameItems(newItems);
   }
+
+  previewBus.addEventListener("preview", (e) => {
+    e.detail.previewFormat(nameItems, setNameItems);
+  });
 
   return (
     <section className="name">

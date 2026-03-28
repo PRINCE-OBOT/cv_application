@@ -17,3 +17,17 @@ export const getItem = (e, items) => {
 
   return { item: newItems[index], newItems };
 };
+
+export const isSomeItemEmpty = (value) => value.some((item) => item.value === "");
+
+export const hideEmptyElem = (isPreview, elem) => {
+  !isPreview
+    ? elem.forEach((icon) => {
+        icon.classList.add("hide");
+      })
+    : elem.forEach((icon) => {
+        icon.classList.remove("hide");
+      });
+};
+
+export const previewBus = new EventTarget();

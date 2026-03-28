@@ -19,7 +19,7 @@ section.contact {
 }
 .contact_item {
   display: grid;
-  grid-template-columns: max-content 80% max-content;
+  grid-template-columns: max-content 1fr max-content;
   column-gap: var(--sz-xsm);
   align-items: center;
 }
