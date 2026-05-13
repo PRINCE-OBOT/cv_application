@@ -2,7 +2,7 @@
 
 A CV builder app where users can create and preview a professional resume in real time.
 
-Built as part of [The Odin Project](https://www.theodinproject.com?utm_source=chatgpt.com) curriculum to practice React fundamentals, component-based architecture, props, state management, and dynamic rendering.
+Built as part of [The Odin Project](https://www.theodinproject.com/lessons/node-path-react-new-cv-application) curriculum to practice React fundamentals, component-based architecture, props, state management, and dynamic rendering.
 
 ---
 
