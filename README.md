@@ -1,16 +1,63 @@
-# React + Vite
+# CV Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A CV builder app where users can create and preview a professional resume in real time.
 
-Currently, two official plugins are available:
+Built as part of [The Odin Project](https://www.theodinproject.com?utm_source=chatgpt.com) curriculum to practice React fundamentals, component-based architecture, props, state management, and dynamic rendering.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Add personal information
+* Add education details
+* Add work experience
+* Live CV preview updates
+* Editable form inputs
+* Responsive layout
+* Reusable React components
+* Dynamic rendering using state
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+* React
+* JavaScript
+* CSS
+* HTML
+* Vite
+
+---
+
+## Sections
+
+### Personal Information
+
+* Full name
+* Email
+* Phone number
+
+### Education
+
+* School name
+* Course of study
+* Study dates
+
+### Experience
+
+* Company name
+* Position title
+* Job responsibilities
+* Employment dates
+
+---
+
+## What I Learned
+
+* React component structure
+* Props and state management
+* Handling form inputs
+* Dynamic UI rendering
+* Lifting state up
+* Organizing reusable components
+* Building responsive interfaces
